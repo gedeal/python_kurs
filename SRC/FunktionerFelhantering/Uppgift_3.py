@@ -8,39 +8,62 @@ def clear_console():
 clear_console()
 
 ## ---------------------------------------------------
+# Menyprogram med funktioner
 
-def skapa_anvandare(namn, alder):
-    """
-    :param namn:
-    :param alder:
-    :return: Informe Name and Age
-    """
-    print(f"{namn} is {alder} years old")
+numbers = []
 
 
-def kontrollera_alder(alder):
-    """
-    Control if Age is 0 or negative
-    Return error info, if found
-    """
-    if alder < 0:
-        # Vi skapar ett ValueError med ett eget meddelande
-        raise ValueError("Age can not be negative!")
-    elif alder == 0:
-        raise ValueError("Age can not be zero!")
-    elif alder > 150:
-        raise ValueError("You are too old to be alive :-( !")
+def summa_lista(lista):
+    ans = sum(lista)
+    print('Sum:', ans)
 
-    return f"    Age {alder} is approved."
+def medelvarde(lista):
+    adding=0
+    for item in lista:
+        adding = adding + item
+    print(f'medelvärde: {adding/2}')
 
 
-namn  = input(' Give your name : ')
-alder = int(input(' Give your age  : '))
-try:
-    print(kontrollera_alder(alder))
-except ValueError as e:
-    print(f"Error: {e}")
-    exit(1)
+def max_varde(lista):
+    lista.sort(reverse=True)
+    print(f'Sorted lista : {lista}')
+    print(f'max_varde: {lista[0]}')
 
 
-skapa_anvandare(namn,alder)
+print('Enter numbers (to finish enter: * )')
+while True:
+    nr = input('   Enter a number : ')
+    if nr == '*':
+        #print('EXIT')
+        break
+    else:
+        try:
+            int_nr = int(nr)
+            numbers.append(int_nr)
+
+        except ValueError as e:
+            print("  *****>  ERROR : ", repr(e))
+            #exit(0)
+
+    #print('Test Array ', numbers)
+
+lennumbers = len(numbers)
+print('\n ---------------------------')
+#print('Array length : ',lennumbers)
+
+print('Entered Array ', numbers)
+
+"""
+TBD 
+Anropa rätt funktion beroende på val
+Fel input (text istället för tal)
+Tom lista
+Fel menyval
+"""
+
+
+summa_lista(numbers)
+
+medelvarde(numbers)
+
+max_varde(numbers)
