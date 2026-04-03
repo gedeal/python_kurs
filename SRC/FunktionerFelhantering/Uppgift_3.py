@@ -18,20 +18,20 @@ numbers = []
 
 def summa_lista(lista):
     ans = sum(lista)
-    print('Sum:', ans)
+    print('    Sum:', ans)
 
 
 def medelvarde(lista):
     adding=0
     for item in lista:
         adding = adding + item
-    print(f'Midle value: {adding/2}')
+    print(f'    Midle value: {adding/2}')
 
 
 def max_varde(lista):
     lista.sort(reverse=True)
     #print(f'Sorted lista : {lista}')
-    print(f'Max value: {lista[0]}')
+    print(f'    Max value: {lista[0]}')
 
 
 
