@@ -34,15 +34,16 @@ def max_varde(lista):
     print(f'    Max value: {lista[0]}')
 
 
-
-print('Enter numbers (to finish enter: * )')
-
-
 def Control_entry(len):
     if len == 0:
         # Vi skapar ett ValueError med ett eget meddelande
         raise ValueError("Array can not be zero !")
     return len
+
+
+##   Run Tasks  ------------------------------------------
+
+print('Enter numbers (to finish enter: * )')
 
 
 while True:
